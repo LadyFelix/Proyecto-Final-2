@@ -7,9 +7,8 @@ Proyecto Ingeniería
 * Rocio Pari Calatayud
 
 # Descripcion de proyecto
-Cantidad adecuada de los materiales para formar un concreto 
-para pista, dependiendo la region en la que se encuentre 
-el proyecto. 
+Cantidad adecuada de los materiales y precios
+para gestionar una obra de construccion.
 
 # Funcionalidades
 - Pedir al usuario el largo y ancho a realizarse la obra
