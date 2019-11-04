@@ -62,3 +62,30 @@ print("Losas adicionales", h)
 r= u+h
 p= round(r,0)
 print("En total necesitaremos",p, "losas")
+
+t = input("ingrese el tipo de construccion:")
+
+if t == "Techo de losa":
+    ancho = float(input("Ingrese el ancho:"))   # ancho de techo
+    largo = float(input("Ingrese el largo:"))   #longitud de techo
+    espesor = 0.25                              # espesor fijo de techo
+    area = ancho * largo
+    volumen = area * espesor
+
+    cantidadladrillos = input("Tipo de ladrillo:")
+    vigueta = float(input("Ingrese ancho de Vigueta:")) #la vigueta es el relleno que existe entre los ladrillos
+
+    if cantidadladrillos == "king kong":
+        cantidadladrillos = area/((13 + vigueta)*24)
+    elif cantidadladrillos == "Pandereta":
+        cantidadladrillos = area/((12 + vigueta)*24)
+    else:
+        ancholadrillo = float(input("Ingrese ancho de ladrillo:"))
+        longitudladrillo = float(input("Ingrese longitud de ladrillo:"))
+    
+        cantidadladrillos = area/((ancholadrillo + vigueta)*longitudladrillo)
+
+
+    print(volumen,"metros cubicos de techo")
+    print(cantidadladrillos, "ladrillos")
+    print(cantidadladrillos,"ladrillos en total para",volumen,"metros cubicos")
