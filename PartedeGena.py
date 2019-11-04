@@ -44,5 +44,21 @@ elif a == "Mamposteria":
             print("La cantidad de ladrillos es",x,"considerando el 5% de desperdicio")
 
 
-
-
+x= float(input("Registrar ancho del piso en cm"))
+y= float(input("Registrar largo del piso en cm"))
+lo= float(input("Registre ancho de loza en cm"))
+sa= float(input("Registre largo de loza en cm"))
+#Numero de piezas
+t= (x*y)
+l=(lo*sa)
+u=t/l
+w= round(u,0)
+print("Losas requeridas", w)
+#Cuantas losas adicional/10% de desperdicio
+g= w*0.01 
+h= round(g,0)
+print("Losas adicionales", h)
+#Losas en total
+r= u+h
+p= round(r,0)
+print("En total necesitaremos",p, "losas")
