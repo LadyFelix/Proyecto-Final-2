@@ -1,16 +1,8 @@
 import os
 os.system("cls")
+a= input("¿Que vas a calcular?(Cantidad de concreto en m3/Mamposteria/Piso/Techo):")
 
-a= input("¿Que vas a calcular?(Capa Aisladora/Mamposteria/Piso/Techo):")
-if a == "Capa Aisladora":
-    b = input("Ingrese el tipo de capa aisladora: (Horizontal/Vertical)")
-    c = float(input("Ingrese el ancho del muro en metros:"))
-    d = float(input("Ingrese el largo del muro en metros:"))
-    volumen = c * d * 0.02
-    x = (volumen * 10.8)
-    print("Cemento:",x,"Kg")
-
-elif a == "Mamposteria":
+if a == "Mamposteria":
     b = float(input("Ingrese el ancho de la pared:"))
     c = float(input("Ingrese el alto de la pared:"))
     d = input("Ingrese el tipo de ladrillo:(King Kong/Pandereta)")
@@ -67,3 +59,26 @@ elif a == "Techo de losa":
     print(volumen,"metros cubicos de techo")
     print(cantidadladrillos, "ladrillos")
     print(cantidadladrillos,"ladrillos en total para",volumen,"metros cubicos")
+
+elif a== "Piso":
+
+    an=float(input("Registrar ancho del piso en cm"))
+    la= float(input("Registrar largo del piso en cm"))
+    lo= float(input("Registrar ancho de la losa en cm"))
+    sa= float(input("Registrar largo de la losa en cm"))
+    #Numero de piezas
+    t= (an*la)
+    l=(lo*sa)
+    u=t/l
+    w= round(u,0)
+    print("Losas requeridas",w)
+    #Cuantas losas adicional/10% de desperdicio
+    g= w*0.01
+    h= round(g,0)
+    print("Lozas adicionales", h)
+    #Losas en total
+    r=u+h
+    p= round(r,0)
+    print("En total necesitaremos",p , "lozas")
+
+
