@@ -35,30 +35,40 @@ if a == "Mamposteria":
         print("La cantidad de bolsas de cemento es",cem, "m3")
         print("La cantidad de arena guesa es",are,"m3")
     
+#calculo del area de techo
 elif a == "Techo de losa":
     ancho = float(input("Ingrese el ancho:"))   # ancho de techo
     largo = float(input("Ingrese el largo:"))   #longitud de techo
-    espesor = 0.25                              # espesor fijo de techo
+    espesor = float(input("Ingrese espesor de ladrillo:"))                            
     area = ancho * largo
     volumen = area * espesor
 
-    cantidadladrillos = input("Tipo de ladrillo:")
+#calculo de la cantidad de ladrillos
+    tipoladrillo = input("Tipo de ladrillo:")
     vigueta = float(input("Ingrese ancho de Vigueta:")) #la vigueta es el relleno que existe entre los ladrillos
 
-    if cantidadladrillos == "king kong":
+    if tipoladrillo == "king kong":
         cantidadladrillos = area/((13 + vigueta)*24)
-    elif cantidadladrillos == "Pandereta":
+        volumenladrillos = 0.002808
+    elif tipoladrillo == "Pandereta":
         cantidadladrillos = area/((12 + vigueta)*24)
+        volumenladrillos = 0.002592
     else:
         ancholadrillo = float(input("Ingrese ancho de ladrillo:"))
         longitudladrillo = float(input("Ingrese longitud de ladrillo:"))
-    
+
         cantidadladrillos = area/((ancholadrillo + vigueta)*longitudladrillo)
+        alturaladrillo = 0.12
+        volumenladrillos = ancholadrillo * longitudladrillo * alturaladrillo
 
+#calulo de volumen de concreto    
+    cantidadconcreto = volumen - (cantidadladrillos * volumenladrillos)
 
+#Resultados
     print(volumen,"metros cubicos de techo")
     print(cantidadladrillos, "ladrillos")
     print(cantidadladrillos,"ladrillos en total para",volumen,"metros cubicos")
+    print(cantidadconcreto,"metros cubicos por metro cuadrado")
 
 elif a== "Piso":
 
