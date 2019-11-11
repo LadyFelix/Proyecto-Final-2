@@ -3,6 +3,7 @@ os.system("cls")
 a= input("¿Que vas a calcular?(Cantidad de concreto en m3/Mamposteria/Piso/Techo):")
 
 if a == "Mamposteria":
+    
     b = float(input("Ingrese el ancho de la pared:"))
     c = float(input("Ingrese el alto de la pared:"))
     d = input("Ingrese el tipo de ladrillo:(King Kong/Pandereta)")
@@ -37,6 +38,7 @@ if a == "Mamposteria":
     
 #calculo del area de techo
 elif a == "Techo de losa":
+
     ancho = float(input("Ingrese el ancho:"))   # ancho de techo
     largo = float(input("Ingrese el largo:"))   #longitud de techo
     espesor = float(input("Ingrese espesor de ladrillo:"))                            
@@ -91,4 +93,13 @@ elif a== "Piso":
     p= round(r,0)
     print("En total necesitaremos",p , "lozas")
 
-
+elif a== "Tarrajeo":
+    ancho= float(input("Registrar ancho de la pared en m"))
+    largo= float(input("Registrar largo de la pared en m"))
+    areaa= ancho*largo
+    #Tarrajeo por m2
+    #Cemento 0.14 bolsa
+    #Arena fina 0.03 m3
+    cemento= 0.14*areaa
+    arena= 0.03*areaa
+    print("Cemento", cemento, "bolsas y Arena fina", arena, "m3")
