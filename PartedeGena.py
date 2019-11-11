@@ -1,6 +1,6 @@
 import os
 os.system("cls")
-a= input("¿Que vas a calcular?(Cantidad de concreto en m3/Mamposteria/Piso/Techo):")
+a= input("¿Que vas a calcular?(Tarrajeo/Mamposteria/Piso/Techo):")
 
 if a == "Mamposteria":
     
