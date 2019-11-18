@@ -74,7 +74,7 @@ while True:
     #calulo de volumen de concreto    
         cantidadconcreto = volumen - (cantidadladrillos * volumenladrillos)
         vol = round(volumen,0)
-        cant1 = round(cantidadladrillos,2)
+        cant1 = round(cantidadladrillos,0)
         cnt2 = round(cantidadconcreto,2)
 
     #Resultados
