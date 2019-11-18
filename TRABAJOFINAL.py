@@ -18,13 +18,13 @@ while True:
                 x = round(cl1,0)
                 y = round(cl,0)
                 vmo = (b*c*0.13)-(y*0.09*0.13*0.24)
-                cemento = (vmo * 7.5)/(b*c)
-                arena_gruesa = (vmo*1.05)/(b*c)
-                cem = round(cemento,2)
+                cemento = (vmo * 7.5)
+                arena_gruesa = (vmo*1.05)
+                cem = round(cemento,0)
                 are = round(arena_gruesa,2)
                 print("La cantidad de ladrillos es",x,"considerando el 5% de desperdicio")
-                print("La cantidad de bolsas de cemento es",cem, "m3")
-                print("La cantidad de arena guesa es",are,"m3")
+                print("La cantidad de bolsas de cemento es",cem)
+                print("La cantidad de arena gruesa es",are,"m3")
                 break
                 
             elif d == "Pandereta":
@@ -34,12 +34,12 @@ while True:
                 x = round(cl1,0)
                 y = round(cl,0)
                 vmo = (b*c*0.13)-(y*0.09*0.13*0.24)
-                cemento = (vmo * 7.5)/(b*c)
-                arena_gruesa = (vmo*1.05)/(b*c)
-                cem = round(cemento,2)
+                cemento = (vmo * 7.5)
+                arena_gruesa = (vmo*1.05)
+                cem = round(cemento,0)
                 are = round(arena_gruesa,2)
                 print("La cantidad de ladrillos es",x,"considerando el 5% de desperdicio")
-                print("La cantidad de bolsas de cemento es",cem, "m3")
+                print("La cantidad de bolsas de cemento es",cem)
                 print("La cantidad de arena guesa es",are,"m3")
                 break
             
@@ -47,22 +47,22 @@ while True:
     #calculo del area de techo
     elif a == "Techo":
 
-        ancho = float(input("Ingrese el ancho:"))   # ancho de techo
-        largo = float(input("Ingrese el largo:"))   #longitud de techo
-        espesor = float(input("Ingrese espesor de ladrillo:"))                            
+        ancho = float(input("Ingrese el ancho en m:"))   # ancho de techo
+        largo = float(input("Ingrese el largo en m:"))   #longitud de techo
+        espesor = float(input("Ingrese espesor de techo en m:"))                            
         area = ancho * largo
         volumen = area * espesor
 
     #calculo de la cantidad de ladrillos
-        tipoladrillo = input("Tipo de ladrillo:(King Kong/ Pandereta)")
+        tipoladrillo = input("Tipo de ladrillo:(Ladrillo 1/ Ladrillo 2/ Ninguno)")
         vigueta = float(input("Ingrese ancho de Vigueta:")) #la vigueta es el relleno que existe entre los ladrillos
 
-        if tipoladrillo == "king kong":
-            cantidadladrillos = area/((13 + vigueta)*24)
-            volumenladrillos = 0.002808
-        elif tipoladrillo == "Pandereta":
-            cantidadladrillos = area/((12 + vigueta)*24)
-            volumenladrillos = 0.002592
+        if tipoladrillo == "Ladrillo 1":
+            cantidadladrillos = area/((0.30 + vigueta)*0.30)
+            volumenladrillos = 0.0108
+        elif tipoladrillo == "Ladrillo 2":
+            cantidadladrillos = area/((0.30 + vigueta)*0.30)
+            volumenladrillos = 0.0135
         else:
             ancholadrillo = float(input("Ingrese ancho de ladrillo:"))
             longitudladrillo = float(input("Ingrese longitud de ladrillo:"))
@@ -73,12 +73,14 @@ while True:
 
     #calulo de volumen de concreto    
         cantidadconcreto = volumen - (cantidadladrillos * volumenladrillos)
+        vol = round(volumen,0)
+        cant1 = round(cantidadladrillos,2)
+        cnt2 = round(cantidadconcreto,2)
 
     #Resultados
-        print(volumen,"metros cubicos de techo")
-        print(cantidadladrillos, "ladrillos")
-        print(cantidadladrillos,"ladrillos en total para",volumen,"metros cubicos")
-        print(cantidadconcreto,"metros cubicos por metro cuadrado")
+        
+        print(cant1,"ladrillos en total para",vol,"metros cubicos de techo")
+        print(cnt2,"metros cubicos de concreto por metro cuadrado")
 
     elif a== "Piso":
 
