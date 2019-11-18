@@ -23,7 +23,7 @@ if a == "Mamposteria":
         print("La cantidad de arena guesa es",are,"m3")
         
     elif d == "Pandereta":
-        e = input("El tipo de aparejo sera:(Soga/Cabeza)")
+        
         cl = (b*c)/((0.24 + 0.015)*(0.09+ 0.015))
         cl1 = cl + (cl*0.05)
         x = round(cl1,0)
@@ -38,7 +38,7 @@ if a == "Mamposteria":
         print("La cantidad de arena guesa es",are,"m3")
     
 #calculo del area de techo
-elif a == "Techo de losa":
+elif a == "Techo":
 
     ancho = float(input("Ingrese el ancho:"))   # ancho de techo
     largo = float(input("Ingrese el largo:"))   #longitud de techo
