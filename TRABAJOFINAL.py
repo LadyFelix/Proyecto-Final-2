@@ -7,36 +7,42 @@ while True:
     if a == "Mamposteria":
         b = float(input("Ingrese el ancho de la pared:"))
         c = float(input("Ingrese el alto de la pared:"))
-        d = input("Ingrese el tipo de ladrillo:(King Kong/Pandereta)")
+        
+        
     #Calculo de ladrillos, cemento y arena gruesa en una mamposteria 
-        if d == "King Kong":
-            cl = (b*c)/((0.24 + 0.015)*(0.09+ 0.015))
-            cl1 = cl + (cl*0.05)
-            x = round(cl1,0)
-            y = round(cl,0)
-            vmo = (b*c*0.13)-(y*0.09*0.13*0.24)
-            cemento = (vmo * 7.5)/(b*c)
-            arena_gruesa = (vmo*1.05)/(b*c)
-            cem = round(cemento,2)
-            are = round(arena_gruesa,2)
-            print("La cantidad de ladrillos es",x,"considerando el 5% de desperdicio")
-            print("La cantidad de bolsas de cemento es",cem, "m3")
-            print("La cantidad de arena guesa es",are,"m3")
+        while True:
+            d = input("Ingrese el tipo de ladrillo:(King Kong/Pandereta)")
+            if d == "King Kong":
+                cl = (b*c)/((0.24 + 0.015)*(0.09+ 0.015))
+                cl1 = cl + (cl*0.05)
+                x = round(cl1,0)
+                y = round(cl,0)
+                vmo = (b*c*0.13)-(y*0.09*0.13*0.24)
+                cemento = (vmo * 7.5)/(b*c)
+                arena_gruesa = (vmo*1.05)/(b*c)
+                cem = round(cemento,2)
+                are = round(arena_gruesa,2)
+                print("La cantidad de ladrillos es",x,"considerando el 5% de desperdicio")
+                print("La cantidad de bolsas de cemento es",cem, "m3")
+                print("La cantidad de arena guesa es",are,"m3")
+                break
+                
+            elif d == "Pandereta":
+                
+                cl = (b*c)/((0.24 + 0.015)*(0.09+ 0.015))
+                cl1 = cl + (cl*0.05)
+                x = round(cl1,0)
+                y = round(cl,0)
+                vmo = (b*c*0.13)-(y*0.09*0.13*0.24)
+                cemento = (vmo * 7.5)/(b*c)
+                arena_gruesa = (vmo*1.05)/(b*c)
+                cem = round(cemento,2)
+                are = round(arena_gruesa,2)
+                print("La cantidad de ladrillos es",x,"considerando el 5% de desperdicio")
+                print("La cantidad de bolsas de cemento es",cem, "m3")
+                print("La cantidad de arena guesa es",are,"m3")
+                break
             
-        elif d == "Pandereta":
-            
-            cl = (b*c)/((0.24 + 0.015)*(0.09+ 0.015))
-            cl1 = cl + (cl*0.05)
-            x = round(cl1,0)
-            y = round(cl,0)
-            vmo = (b*c*0.13)-(y*0.09*0.13*0.24)
-            cemento = (vmo * 7.5)/(b*c)
-            arena_gruesa = (vmo*1.05)/(b*c)
-            cem = round(cemento,2)
-            are = round(arena_gruesa,2)
-            print("La cantidad de ladrillos es",x,"considerando el 5% de desperdicio")
-            print("La cantidad de bolsas de cemento es",cem, "m3")
-            print("La cantidad de arena guesa es",are,"m3")
         
     #calculo del area de techo
     elif a == "Techo":
@@ -48,7 +54,7 @@ while True:
         volumen = area * espesor
 
     #calculo de la cantidad de ladrillos
-        tipoladrillo = input("Tipo de ladrillo:")
+        tipoladrillo = input("Tipo de ladrillo:(King Kong/ Pandereta)")
         vigueta = float(input("Ingrese ancho de Vigueta:")) #la vigueta es el relleno que existe entre los ladrillos
 
         if tipoladrillo == "king kong":
